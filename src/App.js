@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header"
+import Main from "./components/Main"
+import Section from "./components/Section"
+import Poplog from "./components/Poplog"
+import {useState} from "react"
 
 function App() {
+  const [trigger, setTrigger] = useState(false)
+  function login() {
+     setTrigger(true)
+  }
+
+  function close() {
+     setTrigger(false)
+  }
+
+  function signup() {
+        console.log("Hello")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header login={login} signup={signup} />
+      <Poplog trigger={trigger} close={close}  />
+
+      <Main />
+      <Section />
     </div>
   );
 }

@@ -1,38 +1,432 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+
+  width: 100%;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  margin:0;
+  padding-top: 20px;
+  background-image: url("https://wallpaperfx.com/uploads/wallpapers/2010/03/31/583/preview_summer-great-background.jpg") no-repeat;
+  background-size: cover;
+
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: column wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  z-index: -1;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  margin-top: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
 }
+
+.auth {
+ display: flex;
+}
+
+.log {
+  width: 80px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgb(109, 223, 179);
+  color: rgb(255, 251, 251);
+  margin-left: 10px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+
+.middle {
+ width: 100%;
+ display: flex;
+ justify-content: center;
+}
+
+.img {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  justify-content: space-envenly;
+  
+}
+
+.img.digit {
+ margin-left: 20px;
+}
+
+
+.intro {
+  display: flex;
+  flex-flow: column wrap;
+  line-height: 0px;
+  margin-top: 10px;
+  color: rgb(97, 95, 95);
+}
+
+.log-in {
+    width: 500px;
+    height: 500px;
+    display:flex;
+    position: fixed;
+    top: 30px;
+    left: -50px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border: 1px solid red;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
