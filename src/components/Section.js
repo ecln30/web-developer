@@ -18,8 +18,8 @@ import React from 'react';
 function Section() {
     return ( 
         <div className="intro">
-          <h1>I'm a well skilled and qualified developer</h1>
-          <h1>I can quicky asap work for you what you want to an Digital World</h1>  
+          <h1 className="txtOne">I'm a well skilled and qualified developer</h1>
+          <h1 className="textTwo">I can quicky asap work for you what you want to make One</h1>  
         </div>
      );
 }

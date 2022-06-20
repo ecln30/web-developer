@@ -22,7 +22,7 @@ function Header({login, signup}) {
          <div className="auth">
            <p className="log Login"
             onClick={login}
-           > Login</p> 
+           > Log in</p> 
            <p className="log Signup"
             onClick={signup}
            >sign up</p>
