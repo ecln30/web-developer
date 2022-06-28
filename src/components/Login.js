@@ -13,9 +13,11 @@
 
 
 import React from 'react';
+import {  signInWithGoogle } from '../firebase.js'
+import {Button} from '@mui/material'
 
-
-function logIn({email, password, handlePassword, trigger, close, handleLogin, isValid, message, validateEmail}) {
+function logIn({email, password, handlePassword, trigger, close,  isValid, message, validateEmail, InOut}) {
+        
     return (trigger) ? (
         <div className="log-in">
            <button className="close-btn"
@@ -30,8 +32,11 @@ function logIn({email, password, handlePassword, trigger, close, handleLogin, is
            <input className="user password" type="text" value={ password }  
             onChange={ handlePassword } />
             <button className="submit login" type="Sumit"
-               onClick={handleLogin}
             >Log in</button>
+            <hr />
+           <Button 
+            onClick={ signInWithGoogle }
+           >Sign In With Google</Button>
         </div>
      ) : "" ;
 }

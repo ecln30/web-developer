@@ -13,16 +13,21 @@
 
 
 import React from 'react';
+import Logout from "./Logout"
+import Login from "./Login"
+import {  signInWithGoogle, logout } from "../firebase.js"
 
-
-function Header({login, signup}) {
+function Header({ handlelog, signup, close}) {
+     
     return ( 
         <nav>
          <h1>Web world</h1>
          <div className="auth">
            <p className="log Login"
-            onClick={login}
-           > Log in</p> 
+            onClick={handlelog}
+           >
+            log in
+           </p> 
            <p className="log Signup"
             onClick={signup}
            >sign up</p>

@@ -53,6 +53,20 @@ nav {
   cursor: pointer;
 }
 
+.signout {
+  width: 80px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgb(109, 223, 179);
+  color: rgb(255, 251, 251);
+  margin-left: 10px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
 .middle {
  width: 100%;
  display: flex;
@@ -195,8 +209,50 @@ nav {
   color: red;
 }
 
+.chat {
+    width: 450px;
+    height: 600px;
+    border:2px solid rgb(97, 95, 95);
+    border-radius: 10px;
+    position: fixed;
+    text-align: center;
+    top: 300px;
+    right: 50px;
+    color: skyblue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    z-index: 10;
+    background: white
+}
 
+.hide {
+  display: none;
+}
 
+.chatIcon {
+    width: 10%;
+    height: 15%;
+    position: fixed;
+    top: 720px;
+    right: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none
+}
+
+.chatIcon:hover{
+    color:hotpink;
+}
+
+.hid {
+   position: relative;
+   top: 20px;
+   right: -160px;
+   font-size: 1.5rem;
+   background: none;
+   border:none;
+   outline: none;
+   cursor: pointer
+}
 
 
 
