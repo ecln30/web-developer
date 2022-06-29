@@ -9,7 +9,7 @@ function Logout({}) {
         <Button
          className="signout"
          onClick={ logout }
-        >Logout</Button>
+        >LogOut</Button>
      </div>
   )
 }

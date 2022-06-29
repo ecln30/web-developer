@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
-import {  query,collection, getDocs, orderBy, where, onSnapshot,limit} from "firebase/firestore"
-import { db, logout, signInWithGoogle} from "../firebase"
+import {  query,collection, onSnapshot,limit, orderBy} from "firebase/firestore"
+import { db, auth, logout, signInWithGoogle} from "../firebase"
 import Sendmessage from "./Sendmessage"
 import Logout from "./Logout"
 
@@ -17,19 +17,27 @@ function Chat() {
 
   function closeChat() {
      setIsClose(true)
+     window.location.reload()
   }
 
   return (
+    
     <div className={ `chat ${ isClose ? "hide" : ""}`}>
+      <div className="Head">
+           <Logout />
            <button className="hid" onClick={closeChat}> X </button>
-       <p>what can I help you</p>
-     
-       { messages.map(({ id, text, photoURL }) => (
-          <div key={id}>
-            <img src={ photoURL } alt="" />
-            <p>{ text }</p>
+      </div>
+       <p className="greeting">what can I help you</p>
+       <div className="msgs">
+       { messages.map(({ id, text, photoURL, uid }) => (
+          <div>
+            <div key={id} className={`msg ${uid == auth.currentUser.uid ? "sent" : "received"}`}>
+              <p className="chatP">{ text }</p>
+              <img className="idImg" src={ uid == auth.currentUser.uid ? "" : photoURL } alt="" />
+            </div>
           </div>
        ))}
+       </div>
        <Sendmessage />
      </div>
   )
