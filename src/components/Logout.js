@@ -1,15 +1,14 @@
 import React from 'react'
 import { logout } from "../firebase.js"
-import { Button } from '@mui/material'
 
+function Logout() {
 
-function Logout({}) {
   return (
      <div>
-        <Button
+        <button
          className="signout"
          onClick={ logout }
-        >LogOut</Button>
+        >Logout</button>
      </div>
   )
 }

@@ -32,6 +32,7 @@ nav {
   width: 100%;
   height: 30%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -56,14 +57,17 @@ nav {
 .signout {
   width: 80px;
   height: 40px;
+  position: absolute;
+  top: 3.8%;
+  right: 25%;
   border: none;
   outline: none;
   border-radius: 10px;
   background: rgb(109, 223, 179);
   color: rgb(255, 251, 251);
-  margin-left: 10px;
+  font-size: 1rem;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 4px;
   cursor: pointer;
 }
 
@@ -103,50 +107,56 @@ nav {
 }
 
 
-.log-in {
-    width: 400px;
-    height: 450px;
-    display:flex;
-    flex-flow: column wrap;
-    position: fixed;
-    top: 100px;
-    right: 700px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    align-items: center;
-    background: rgb(185, 206, 214);
-    border-radius: 20px;
-    z-index: 1;
+.login {
+  width: 60vw;
+  height: 60vh;
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: #dde1e9;
+
+}
+.login__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+}
+.login__textBox {
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(189, 117, 151);
+}
+.login__google {
+  background-color: #4285f4;
+}
+.login div {
+  margin-top: 10px;
 }
 
-.user {
-   padding: 0 20px;
+.buttons {
+   display: flex;
+   flex-flow: column wrap;
 }
-
-.email {
-   width: 300px;
-   height: 50px;
-   font-size: 20px;
-   outline:none;
-   border:none;
-   border-radius: 10px;
-   margin-top: -15px;
-}
-
-.password {
-   width: 300px;
-   height: 50px;
-   font-size: 20px;
-   outline: none;
-   border:none;
-   border-radius: 10px;
-   margin-top: -15px;
-}
-
 
 .close-btn {
   width: 30px;
   height: 30px;
-  margin-left: 200px;
+  margin-left: 250px;
   border: none;
   outline:none;
   background: none;
@@ -154,26 +164,6 @@ nav {
   margin-top: 10%;
 }
 
-.submit {
-    margin-top: 30px;
-    width: 200px;
-    height: 50px;
-    border-radius: 20px;
-    border:none;
-    outline:none;
-    font-size: 20px;
-}
-
-.submit.login:hover {
-    
-    background: greenyellow;
-    cursor: pointer
-}
-
-.submit.sign:hover {
-    background: greenyellow;
-    cursor: pointer;
-}
 
 .sign-up {
 
@@ -224,13 +214,21 @@ nav {
     background: white
 }
 
-.hide {
+.hide{
   display: none;
 }
 
+.show {
+  display: block
+}
+
+.Invisible {
+   visibility: hidden;
+}
+
 .chatIcon {
-    width: 10%;
-    height: 15%;
+    width: 5%;
+    height: 10%;
     position: fixed;
     top: 720px;
     right: 50px;
@@ -320,11 +318,57 @@ nav {
    align-items: center;
 }
 
+
 .greeting {
     margin: 0;
 }
 
+/* signup */
+.register {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dde1e9;
 
+  
+}
+.register__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+}
+.register__textBox {
+  width: 350px;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.register__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+.register__google {
+  background-color: #4285f4;
+}
+.register div {
+  margin-top: 10px;
+}
+
+.close-Btn {
+    margin-top: -15px;
+    margin-right: -250px;
+    cursor: pointer;
+}
 
 
 
@@ -342,6 +386,7 @@ nav {
     height: 30px;
     margin-top: -7px;
   }
+
 }
 
 

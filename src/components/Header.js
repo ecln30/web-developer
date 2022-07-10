@@ -17,18 +17,17 @@ import Logout from "./Logout"
 import Login from "./Login"
 import {  signInWithGoogle, logout } from "../firebase.js"
 
-function Header({ handlelog, signup, close}) {
-     
+function Header({handlelog, signup, user}) {
     return ( 
         <nav>
          <h1>Web world</h1>
          <div className="auth">
-           <p className="log Login"
-            onClick={handlelog}
+           <p className={`log Login ${ user && signInWithGoogle ? "hide" : "show" }`}
+           onClick={handlelog}
            >
-            log in
+            { "Login" }
            </p> 
-           <p className="log Signup"
+           <p className={`log Signup ${ user && signInWithGoogle ? "hide" : "show"}` }
             onClick={signup}
            >sign up</p>
          </div>

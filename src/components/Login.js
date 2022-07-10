@@ -1,47 +1,70 @@
 
+import React, { useEffect } from 'react';
+import {  signInWithGoogle, logInWithEmailAndPassword,auth } from '../firebase.js'
+import { Link, useNavigate } from "react-router-dom"
+import { useAuthState } from "react-firebase-hooks/auth"
 
 
+function Login({ email, password,HandlePassword, trigger, close, HandleEmail, HandleLogin, setTrigger }) {
+    
+    const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
 
+    useEffect(() => {
+      if (loading) {
+        // maybe trigger a loading screen
+        return;
+      }
+      if (user) navigate("/dashboard");
+    }, [user, loading]);
 
+    function signGoogle() {
+       signInWithGoogle(setTrigger)
+    }
 
-
-
-
-
-
-
-
-
-import React from 'react';
-import {  signInWithGoogle } from '../firebase.js'
-import {Button} from '@mui/material'
-
-function logIn({email, password, handlePassword, trigger, close,  isValid, message, validateEmail, InOut}) {
-        
     return (trigger) ? (
-        <div className="log-in">
+        <div className="login">
+          <div className="login-container">
+
            <button className="close-btn"
-               onClick={close}
+               onClick={ close }
            > X </button>
-           <div className={`message ${isValid ? 'success' : 'error'}`}>
-            {message}
-           </div>
-           <p>Email Address</p>
-           <input className="user email" type="Email"  onChange={ validateEmail} />
-           <p>Password</p>
-           <input className="user password" type="text" value={ password }  
-            onChange={ handlePassword } />
-            <button className="submit login" type="Sumit"
+          
+           <p className="p">Email</p>
+           <input className="login__textBox" type="Email" 
+           value={ email } 
+           onChange={ HandleEmail } />
+
+            <p className="p">Password</p>
+           <input className="login__textBox" type="password" 
+            value={ password }  
+            onChange={ HandlePassword } />
+
+            <div className="buttons">
+
+            <button className="login__btn" type="Sumit"
+            onClick={ HandleLogin }
             >Log in</button>
-            <hr />
-           <Button 
-            onClick={ signInWithGoogle }
-           >Sign In With Google</Button>
+            
+           <button
+            className="login__btn login__google"
+            onClick={ signGoogle }
+           >Login with Google</button>
+            </div>
+           
+        <div>
+          <Link to="/reset">Forgot Password</Link>
+        </div>
+        <div>
+          Don't have an account? <Link to="/SignUp">Register</Link> now.
+        </div>
+
+          </div>
         </div>
      ) : "" ;
 }
 
-export default logIn;
+export default Login;
 
 
 
