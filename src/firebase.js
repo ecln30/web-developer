@@ -32,7 +32,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
-const signInWithGoogle = async (setTrigger) => {
+const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
     const user = res.user;
@@ -46,17 +46,15 @@ const signInWithGoogle = async (setTrigger) => {
         email: user.email,
       });
     }
-    setTrigger(false)
-    
   } catch (err) {
     console.error(err);
     alert(err.message);
   }
+ 
 };
-const logInEnP = async (email, password, setTrigger) => {
+const logInEnP = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    setTrigger(false)
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -72,6 +70,7 @@ const registerEnP = async (name, email, password) => {
       authProvider: "local",
       email,
     });
+    alert("registered Sucessfully")
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -89,7 +88,6 @@ const sendPasswordReset = async (email) => {
 const logout = () => {
   signOut(auth);
 };
-
 
 export {
   db,

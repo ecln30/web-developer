@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from "react"
-import { BrowserRouter as Router, Route,  Routes} from "react-router-dom";
+import {  Route,  Routes} from "react-router-dom";
 import Header from "./components/Header"
 import Main from "./components/Main"
 import Section from "./components/Section"
@@ -10,7 +10,7 @@ import Signup from "./components/SignUp"
 import Reset from "./components/Reset"
 import toast, { Toaster } from "react-hot-toast";
 import Chat from "./components/Chat"
-import { auth, logout, logInEnP, signInWithGoogle,  onAuthStateChanged } from "./firebase.js"
+import { auth, logout, logInEnP, signInWithGoogle,  onAuthStateChanged , registerEnP} from "./firebase.js"
 import {useAuthState} from "react-firebase-hooks/auth"
 import { setRef , Button} from '@mui/material';
 
@@ -53,10 +53,6 @@ function App() {
   }
 }
 
- function handleSignUp() {
-     
-  }
-
 const notify = () => toast("Please Login",  {
   style: {
     border: '1px solid black',
@@ -73,7 +69,6 @@ const notify = () => toast("Please Login",  {
 
   return (
     <div className="App">
-      <firebase setTrigger={ setTrigger } />
       <Header
         close={close}
         user={user}
@@ -82,17 +77,18 @@ const notify = () => toast("Please Login",  {
 
       <Login
       HandleEmail={ HandleEmail }
-      HandlePassword={HandlePassword}
-      HandleLogin={HandleLogin}
+      HandlePassword={ HandlePassword }
+      HandleLogin={ HandleLogin }
       setTrigger={ setTrigger }
       user={user}
-      email={email}
+      email={ email }
       password={password}
       trigger={trigger} 
       close={close}  />
    
       <Signup 
-        handleSignUp={ handleSignUp }
+        setTrigger={setTrigger}
+        setShow={setShow}
         show={ show } 
         close={ close }
       />
@@ -104,9 +100,9 @@ const notify = () => toast("Please Login",  {
            />
 
         <Routes>
-          <Route exact path="/" component={ Login } />
-          <Route exact path="/signup" component={ Signup } />
-          <Route exact path="/reset" component={ Reset } />
+          <Route  path="/" element={ <Login /> } />
+          <Route  path="/signup" element={ <Signup />} />
+          <Route  path="/reset" element={ <Reset /> } />
         </Routes>
       
       <Main />
@@ -125,7 +121,7 @@ const notify = () => toast("Please Login",  {
          />
       </div> 
       { isTrue ?  <Chat setIsTrue={ setIsTrue } /> : "" }
-      { user && signInWithGoogle ? <Logout /> : ""}
+    {user ? <Logout /> : " "}
     </div>
   );
 }

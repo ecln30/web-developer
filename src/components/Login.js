@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import {  signInWithGoogle, logInWithEmailAndPassword,auth } from '../firebase.js'
+import Logout from "./Logout"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthState } from "react-firebase-hooks/auth"
 
@@ -18,9 +19,6 @@ function Login({ email, password,HandlePassword, trigger, close, HandleEmail, Ha
       if (user) navigate("/dashboard");
     }, [user, loading]);
 
-    function signGoogle() {
-       signInWithGoogle(setTrigger)
-    }
 
     return (trigger) ? (
         <div className="login">
@@ -48,7 +46,7 @@ function Login({ email, password,HandlePassword, trigger, close, HandleEmail, Ha
             
            <button
             className="login__btn login__google"
-            onClick={ signGoogle }
+            onClick={ signInWithGoogle }
            >Login with Google</button>
             </div>
            
@@ -58,8 +56,8 @@ function Login({ email, password,HandlePassword, trigger, close, HandleEmail, Ha
         <div>
           Don't have an account? <Link to="/SignUp">Register</Link> now.
         </div>
-
           </div>
+          {user ? setTrigger(false) : ""}
         </div>
      ) : "" ;
 }

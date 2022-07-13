@@ -13,8 +13,10 @@
 
 
 import React, { useEffect, useState} from "react"
+import { SettingsPhoneTwoTone } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import Login from "./Login"
 import {
   auth,
   registerEnP,
@@ -22,10 +24,10 @@ import {
 } from "../firebase";
 
 
-function Signup({ show, close}) {
+function Signup({ show, close, setShow}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState("")
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const register = () => {
@@ -36,6 +38,7 @@ function Signup({ show, close}) {
     if (loading) return;
     if (user) navigate("/dashboard");
   }, [user, loading]);
+
    
     return (show) ? (
       <div className="register">
@@ -77,6 +80,7 @@ function Signup({ show, close}) {
           Already have an account? <Link to="/login">Login</Link> now.
         </div>
       </div>
+      { user ? setShow(false) : ""}
     </div>
      ) : "" ;
 
