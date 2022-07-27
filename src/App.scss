@@ -1,0 +1,719 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body{
+  
+    width: 100%;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+    padding-top: 20px;
+    background-image: url('/image/img8.jpg');
+    background-size: cover;
+
+  }
+  
+  .App {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background:'url(./image/Desk.jpg)';
+    z-index: -1;
+  }
+  
+  header {
+    margin-top: 5%;
+  }
+  
+  nav {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .auth {
+   display: flex;
+  }
+  
+  .log {
+    width: 80px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgb(109, 223, 179);
+    color: rgb(255, 251, 251);
+    margin-left: 10px;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  
+  .signout {
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    top: 3.8%;
+    right: 25%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgb(109, 223, 179);
+    color: rgb(255, 251, 251);
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 4px;
+    cursor: pointer;
+  }
+  
+  .middle {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+  }
+  
+  .img {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    justify-content: space-envenly;
+    
+  }
+  
+  .img.digit {
+   margin-left: 20px;
+  }
+  
+  .intro {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-flow: column wrap;
+    line-height: 0px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content:center;
+    background:rgb(194, 187, 129);
+    color: rgb(97, 95, 95);
+  }
+  
+  .txtOne {
+     margin-right: 293px;
+  }
+  
+  
+  .login {
+    width: 60vw;
+    height: 60vh;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #dde1e9;
+  
+  }
+  .login__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .login__textBox {
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  .login__btn {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+    color: white;
+    background-color: rgb(189, 117, 151);
+  }
+  .login__google {
+    background-color: #4285f4;
+  }
+  .login div {
+    margin-top: 10px;
+  }
+  
+  .buttons {
+     display: flex;
+     flex-flow: column wrap;
+  }
+  
+  .close-btn {
+    width: 30px;
+    height: 30px;
+    margin-left: 250px;
+    border: none;
+    outline:none;
+    background: none;
+    font-size: 20px;
+    margin-top: 10%;
+  }
+  
+  
+  .sign-up {
+  
+      width: 400px;
+      height: 450px;
+      display:flex;
+      flex-flow: column wrap;
+      position: fixed;
+      top: 100px;
+      right: 700px;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      align-items: center;
+      background: rgb(185, 206, 214);
+      border-radius: 20px;
+      z-index: 1;
+  }
+  
+  .firstname {
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    outline: none;
+    border:none;
+    border-radius: 10px;
+    margin-top: -15px;
+  }
+  
+  .success {
+    color: blue;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .chat {
+      width: 450px;
+      height: 600px;
+      border:2px solid rgb(97, 95, 95);
+      border-radius: 10px;
+      position: fixed;
+      text-align: center;
+      top: 300px;
+      right: 50px;
+      color: skyblue;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      z-index: 10;
+      background: white
+  }
+  
+  .hide{
+    display: none;
+  }
+  
+  .show {
+    display: block
+  }
+  
+  .Invisible {
+     visibility: hidden;
+  }
+  
+  .chatIcon {
+      width: 5%;
+      height: 10%;
+      position: fixed;
+      top: 720px;
+      right: 50px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+  }
+  
+  
+  .hid {
+     font-size: 1.5rem;
+     background: none;
+     border:none;
+     outline: none;
+     cursor: pointer;
+     margin:20px 40px;
+     margin-bottom: 0;
+  }
+  
+  .onMsg {
+      position: absolute;
+      bottom: 10%;
+      left: 15%
+  }
+  
+  .idImg {
+    border-radius: 50%;
+    height: 25px;
+  }
+  
+  .msg {
+    display: flex;
+    padding: 0px 10px 0px 5px;
+    padding-bottom: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgb(164, 164, 164);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sent {
+    background-color: rgb(173, 173, 155);
+    color: black;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px 10px 10px;
+    margin: 5px;
+    text-align: end;
+    float: right;
+  }
+  
+  .received {
+    border: 1px solid lightgray;
+    padding: 5px 20px 10px 10px;
+    background-color: #FAFAFA;
+    margin: 5px;
+    float: left;
+  }
+  
+  .msgs {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  
+  .chatP {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 0px;
+    text-align:center;
+    overflow-wrap: break-word;
+  }
+  
+  .chat .Head {
+     display: flex;
+     flex-flow: wrap;
+     justify-content: space-between;
+     align-items: center;
+  }
+  
+  
+  .greeting {
+      margin: 0;
+  }
+  
+  /* signup */
+  .register {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dde1e9;
+  
+    
+  }
+  .register__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .register__textBox {
+    width: 350px;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .register__btn {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+    color: white;
+    background-color: black;
+  }
+  .register__google {
+    background-color: #4285f4;
+  }
+  .register div {
+    margin-top: 10px;
+  }
+  
+  .close-Btn {
+      margin-top: -15px;
+      margin-right: -250px;
+      cursor: pointer;
+  }
+
+  // menu bar css
+
+.container {
+   position: absolute;
+   width: 50px;
+   height: 80px;
+   top: 3%;
+   right: 5%;
+   display: flex;
+   flex-direction: column;
+
+}
+
+.bar {
+   width: 100%;
+   height: 2px;
+   background: white;
+   border-radius: 5px;
+   display: block;
+}
+  
+  
+  
+  @media (max-width: 500px) {
+    p {
+      font-size: 15px;
+    }
+    .sent {
+      padding: 7px 7px 0 7px;
+    }
+    .received {
+      padding: 7px 7px 0 7px;
+    }
+    img {
+      height: 30px;
+      margin-top: -7px;
+    }
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

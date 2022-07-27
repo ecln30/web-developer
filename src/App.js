@@ -8,6 +8,7 @@ import Login from "./components/Login"
 import Logout from "./components/Logout"
 import Signup from "./components/SignUp"
 import Reset from "./components/Reset"
+import Sidebar from './components/Sidebar'
 import toast, { Toaster } from "react-hot-toast";
 import Chat from "./components/Chat"
 import { auth, logout, logInEnP, signInWithGoogle,  onAuthStateChanged , registerEnP} from "./firebase.js"
@@ -66,15 +67,14 @@ const notify = () => toast("Please Login",  {
     
   }
 
-
   return (
-    <div className="App">
+    <div className="App" id="outer-container">
       <Header
         close={close}
         user={user}
         signup={signup} 
         handlelog={ handlelog } />
-
+         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
       <Login
       HandleEmail={ HandleEmail }
       HandlePassword={ HandlePassword }

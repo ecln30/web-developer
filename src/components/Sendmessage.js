@@ -36,7 +36,7 @@ function Sendmessage() {
   return (
     
     <div className="onMsg">
-      <form onSubmit={ sendMessage }  >
+      <form onSubmit={sendMessage}>
       <Input
        style={{ width: '78%', fontSize: '15px', fontWeight: '550', marginLeft: '5px', marginBottom: '-3px' }} 
           type="text"
