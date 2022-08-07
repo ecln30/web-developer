@@ -31,9 +31,9 @@ function Chat({ setIsTrue}) {
       <div className="msgs">
        { messages.map(({ id, text, photoURL, uid }) => (
           <div>
-            <div key={id} className={`msg ${uid == auth.currentUser.uid ? "sent" : "received"}`}>
+            <div key={id} className={`msg ${uid === auth.currentUser.uid ? "sent" : "received"}`}>
               <p className="chatP">{ text }</p>
-              <img className="idImg" src={ uid == auth.currentUser.uid ? "" : photoURL } alt="" />
+              <img className="idImg" src={ uid === auth.currentUser.uid ? "" : photoURL } alt="" />
             </div>
           </div>
        ))}

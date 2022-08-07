@@ -13,10 +13,7 @@
 
 
 import React from 'react';
-import Logout from "./Logout"
-import Login from "./Login"
-import Menu from './Sidebar'
-import {  signInWithGoogle, logout } from "../firebase.js"
+import {signInWithGoogle} from "../firebase.js"
 
 function Header({handlelog, signup, user}) {
     return ( 

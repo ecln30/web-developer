@@ -11,7 +11,7 @@ import Reset from "./components/Reset"
 import Sidebar from './components/Sidebar'
 import toast, { Toaster } from "react-hot-toast";
 import Chat from "./components/Chat"
-import { auth, logout, logInEnP, signInWithGoogle,  onAuthStateChanged , registerEnP} from "./firebase.js"
+import { auth,  logInEnP,} from "./firebase.js"
 import {useAuthState} from "react-firebase-hooks/auth"
 import { setRef , Button} from '@mui/material';
 
@@ -115,10 +115,11 @@ const notify = () => toast("Please Login",  {
                 right: -500,
            }}
       />
-      <img className="chatIcon" src="https://aspireinternetdesign.com/cms/wp-content/uploads/2014/12/benefits-of-live-chat-on-website.jpg" alt="" 
+      <img className="chatIcon" src="image/chat.png" alt="" 
 
           onClick={ handleChat }
          />
+
       </div> 
       { isTrue ?  <Chat setIsTrue={ setIsTrue } /> : "" }
     {user ? <Logout /> : " "}
