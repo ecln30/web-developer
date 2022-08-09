@@ -101,8 +101,8 @@ const notify = () => toast("Please Login",  {
 
         <Routes>
           <Route  path="/" element={ <Login /> } />
-          <Route  path="/signup" element={ <Signup />} />
-          <Route  path="/reset" element={ <Reset /> } />
+          <Route  path="signup" element={ <Signup />} />
+          <Route  path="reset" element={ <Reset /> } />
         </Routes>
       
       <Main />

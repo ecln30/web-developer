@@ -1,8 +1,7 @@
 
 import React, { useEffect } from 'react';
-import {  signInWithGoogle, logInWithEmailAndPassword,auth } from '../firebase.js'
-import Logout from "./Logout"
-import { Link, useNavigate } from "react-router-dom"
+import {  signInWithGoogle,auth } from '../firebase.js'
+import { NavLink, useNavigate } from "react-router-dom"
 import { useAuthState } from "react-firebase-hooks/auth"
 
 
@@ -51,10 +50,10 @@ function Login({ email, password,HandlePassword, trigger, close, HandleEmail, Ha
             </div>
            
         <div>
-          <Link to="/reset">Forgot Password</Link>
+          <NavLink to="/reset">Forgot Password</NavLink>
         </div>
         <div>
-          Don't have an account? <Link to="/SignUp">Register</Link> now.
+          Don't have an account? <NavLink to="/signUp">Register</NavLink> now.
         </div>
           </div>
           {user ? setTrigger(false) : ""}
