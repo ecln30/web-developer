@@ -10,6 +10,12 @@ import {
   signOut,
 } from "firebase/auth";
 import {
+  getStorage,
+  ref as storageRef,
+  uploadString,
+  getDownloadURL,
+} from "firebase/storage";
+import {
   getFirestore,
   query,
   getDocs,
@@ -31,6 +37,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
   try {
@@ -85,6 +92,12 @@ const sendPasswordReset = async (email) => {
     alert(err.message);
   }
 };
+// Uploads a data-URL photo (from the camera) and resolves with its public URL.
+const uploadChatImage = async (uid, dataUrl) => {
+  const fileRef = storageRef(storage, `chat-images/${uid}/${Date.now()}.jpg`);
+  await uploadString(fileRef, dataUrl, "data_url");
+  return getDownloadURL(fileRef);
+};
 const logout = () => {
   signOut(auth);
 };
@@ -92,6 +105,8 @@ const logout = () => {
 export {
   db,
   auth,
+  storage,
+  uploadChatImage,
   logout,
   logInEnP,
   registerEnP,
