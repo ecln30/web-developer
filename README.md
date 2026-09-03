@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Camera in chat
+
+The chat window has a camera button next to the message box. It opens a live
+preview with `navigator.mediaDevices.getUserMedia`, and you can capture a
+still, retake it, flip between the front and back camera, and send the photo
+into the chat.
+
+Notes:
+
+- Browsers only grant camera access over `https://` or `http://localhost`.
+- Captured photos are uploaded to Firebase Storage under
+  `chat-images/<uid>/<timestamp>.jpg`, so the Firebase project needs Storage
+  enabled and `REACT_APP_STORAGE_BUKET` set in your `.env`. The message
+  document then stores the download URL in an `imageURL` field.
+- The camera stream is stopped whenever the camera panel is closed.
